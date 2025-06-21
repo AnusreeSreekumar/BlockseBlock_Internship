@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "student_reportcard_dapp_backend": {
+      "candid": "src/student_reportcard_dapp_backend/student_reportcard_dapp_backend.did",
+      "package": "student_reportcard_dapp_backend",
+      "type": "rust"
+    },
+    "student_reportcard_dapp_frontend": {
+      "dependencies": [
+        "student_reportcard_dapp_backend"
+      ],
+      "source": [
+        "src/student_reportcard_dapp_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "student_reportcard_dapp_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
