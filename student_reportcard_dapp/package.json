@@ -14,5 +14,8 @@
   "type": "module",
   "workspaces": [
     "src/student_reportcard_dapp_frontend"
-  ]
+  ],
+  "dependencies": {
+    "jspdf": "^3.0.1"
+  }
 }

@@ -15,7 +15,7 @@ thread_local! {
     static STUDENTS: RefCell<HashMap<String, Student>> = RefCell::new(HashMap::new());
 }
 
-#[update]
+#[ic_cdk::update]
 pub fn add_student(name: String, total_marks: u32, num_subjects: u32) {
     let student = Student {
         name: name.clone(),
@@ -35,14 +35,14 @@ pub fn get_student(name: String) -> Option<Student> {
     })
 }
 
-#[update]
+#[ic_cdk::update]
 pub fn delete_student(name: String) {
     STUDENTS.with(|students| {
         students.borrow_mut().remove(&name);
     });
 }
 
-#[update]
+#[ic_cdk::update]
 pub fn update_student(name: String, total_marks: u32, num_subjects: u32) -> bool {
     STUDENTS.with(|students| {
         let mut map = students.borrow_mut();

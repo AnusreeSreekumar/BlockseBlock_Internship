@@ -1,3 +1,17 @@
 service : {
-    "greet": (text) -> (text) query;
+  "add_student": (text, nat32, nat32) -> ();
+  "get_student": (text) -> (opt record {
+    name: text;
+    total_marks: nat32;
+    num_subjects: nat32;
+  }) query;
+  "delete_student": (text) -> ();
+  "update_student": (text, nat32, nat32) -> (bool);
+  "calculate_average": (text) -> (opt float32) query;
+  "assign_grade": (text) -> (opt text) query;
+  "list_all_students": () -> (vec record {
+    name: text;
+    total_marks: nat32;
+    num_subjects: nat32;
+  }) query;
 }
